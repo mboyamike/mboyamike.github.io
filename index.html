@@ -10,31 +10,32 @@
 
     For more details:
     * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
   -->
   <base href="/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="description" content="WEquil School">
+
+  <meta name="google-signin-client_id" content="775102555650-q7nhrfjqjv7t75uceibohembpg9uf6r7.apps.googleusercontent.com">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="flutter_application_1">
+  <meta name="apple-mobile-web-app-title" content="wequilschool_app">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-  <title>flutter_application_1</title>
+  <title>wequilschool_app</title>
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
+  <!-- FACEBOOK WEB LOGIN JAVASCRIPT SDK -->
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
   <script>
-    var serviceWorkerVersion = '2661741098';
+    var serviceWorkerVersion = '1080465248';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
@@ -67,7 +68,7 @@
             if (!reg.active && (reg.installing || reg.waiting)) {
               // No active web worker and we have installed or are installing
               // one for the first time. Simply wait for it to activate.
-              waitForActivation(reg.installing || reg.waiting);
+              waitForActivation(reg.installing ?? reg.waiting);
             } else if (!reg.active.scriptURL.endsWith(serviceWorkerVersion)) {
               // When the app updates the serviceWorkerVersion changes, so we
               // need to ask the service worker to update.
@@ -97,5 +98,33 @@
       loadMainDartJs();
     }
   </script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-functions.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+  
+  <script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyBmfdn74p-312rFr9qttwM40ByH4E5DGpg",
+    authDomain: "wequilschoolapp.firebaseapp.com",
+    projectId: "wequilschoolapp",
+    storageBucket: "wequilschoolapp.appspot.com",
+    messagingSenderId: "775102555650",
+    appId: "1:775102555650:web:bc14ef4274d5b862a3691b",
+    measurementId: "G-8RY3QJWHD7"
+  };
+  // Initialize Firebase passing in the firebaseConfig from above
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+
 </body>
 </html>
