@@ -1,6 +1,6 @@
 {
-    "name": "showing_autoroute",
-    "short_name": "showing_autoroute",
+    "name": "counter",
+    "short_name": "counter",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
